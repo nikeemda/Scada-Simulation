@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCADA SIM</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>SCADA System Simulation</h1>
+    </div>
+    <div class="container">
+        <div class="data-display">
+            <div class="data-box">
+                <h2>Temperature</h2>
+                <p id="temperature">--</p>
+            </div>
+            <div class="data-box">
+                <h2>Pressure</h2>
+                <p id="pressure">--</p>
+            </div>
+            <div id="alert" style="color: red; display: none;">High Temperature Alert!</div>
+        </div>
+        <div id="chart" style="width: 100%; height: 400px"></div>
+        <div class="controls">
+            <button class="control-button" onclick="startSimulation()">Start Simulation</button>
+            <button class="control-button" onclick="stopSimulation()">Stop Simulation</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scadascript.js') }}"></script>
+    
+</body>
+</html>
